@@ -13,7 +13,8 @@ def generate_launch_description():
     turtle_spawn_node = Node(
         package="assignment_turtle_sim_project",
         executable="turtle_spawn",
-        parameters=[{"spawn_frequency": 5}, {"spawn_immediately": False}]
+        parameters=[{"spawn_frequency": 4},
+                    {"spawn_immediately": True}]
     )
 
     turtle_control_node = Node(
