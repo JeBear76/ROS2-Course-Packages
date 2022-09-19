@@ -151,7 +151,8 @@ class TurtleControlNode : public rclcpp::Node {
                 ("rotation: " + std::to_string(rotation)).c_str());
 
     (*turtleTwist).angular.z = rotation;
-    (*turtleTwist).linear.x = _turtle_speed;
+    (*turtleTwist).linear.x =
+        distance > _turtle_speed ? _turtle_speed : 2.0 * distance / 3.0;
   }
 
   /**
