@@ -141,6 +141,7 @@ class TurtleControlNode : public rclcpp::Node {
                 ("tanAngle: " + std::to_string(tanAngle)).c_str());
 
     double rotation = tanAngle - _turtlePose.theta;
+    rotation = remainder(rotation, 2.0 * M_PI);
 
     RCLCPP_INFO(
         this->get_logger(),
