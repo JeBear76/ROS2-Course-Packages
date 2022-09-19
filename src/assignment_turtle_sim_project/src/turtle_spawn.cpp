@@ -17,7 +17,7 @@ class TurtleSpawnNode : public rclcpp::Node {
  public:
   TurtleSpawnNode(std::string nodeName) : Node(nodeName) {
     _nodeName = nodeName;
-    _distribution = std::uniform_real_distribution<float>(0, 10);
+    _distribution = std::uniform_real_distribution<float>(1, 10);
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     _generator = std::default_random_engine(seed);
 
